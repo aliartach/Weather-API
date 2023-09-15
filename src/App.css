@@ -2,30 +2,21 @@
   margin: 0;
   padding: 0;
   font-family: Raleway;
-  
-}
+  }
 body{
   background-color:#9CCEF4;
   margin: auto;
-
 }
-
-
-
 .header{
-
-  background-color: #759EDA;
-
-  height: 100px;
+background-color: #759EDA;
+height: 100px;
 }
-
 form{
   width: 50%;
   height: 100px;
   display: flex;
   align-items: center;
   margin-left: 20px;
-
 }
 
 button{
@@ -50,21 +41,14 @@ input{
 input:focus{
   border-bottom: solid black 1px;
 }
-
-
-
-/* targeting content /
-.content{
-  display: block;
-  border: solid black 4px;
-}
-
-/ details */
 .details{
 
   margin: 100px 300px;
   display: flex;
   flex-wrap: wrap;
+}
+.details p {
+  font-size: 20px;
 }
 
 .container{
@@ -81,30 +65,18 @@ input:focus{
 .container img {
   height: 100px;
   width: 100px;
+  margin: 20px 0 20px 0;
 }
-/* .app1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-} */
+
 .generalInfo {
   margin-top: 30px;
   display: flex;
   justify-content: center;
-  /* padding-left: 40px; */
-  /* justify-content: space-between; */
 }
 .generalInfo h3, .generalInfo p {
   margin: 10px;
 }
-/* .temperature {
-  display: flex;
-  justify-content: center;
-  justify-content: space-around;
-  margin-top: 30px;
-  width: 33%;
-} */
+
 .temperature container {
   display: flex;
   justify-content: center;
@@ -131,18 +103,11 @@ input:focus{
   font-size: xx-large;
   text-align: center;
 }
-.generalInfo {
-  /* display: flex; */
-  /* justify-content: space-between; */
-  /* align-items: center; */
-}
+
 .generalInfo p {
   font-size: large;
 }
-/* .temperature p {
-  font-size: larger;
-  margin-left: 30px;
-} */
+
 .content {
   display: flex;
   justify-content: center;
