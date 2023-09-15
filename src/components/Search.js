@@ -1,4 +1,6 @@
 import React from "react";
+
+// import clear from "../img/weather-icons/clear.svg";
 import "./Search.css";
 import "../App.css"
 class Search extends React.Component {

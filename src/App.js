@@ -3,7 +3,7 @@ import Search from "./components/Search";
 import Details from "./components/Details";
 import Content from "./components/Content";
 // import SayHi, { SayHello } from "./components/WeatherItem";
-// import fakeWeatherData from "./fakeWeatherData.json";
+import fakeWeatherData from "./fakeWeatherData.json";
 
 // import clear from "./img/weather-icons/clear.svg";
 import "./App.css";
@@ -26,10 +26,9 @@ class App extends Component {
     return (
       <div className="app">
         
-        <Search />
-        <Content /> 
-        <Details />
-        
+        <Search  />
+        <Content  /> 
+        <Details   />
       </div>
     );
   }

@@ -1,40 +1,57 @@
-import React from "react";
-
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 import mostlycloudy from "../img/weather-icons/mostlycloudy.svg"
 
-class Content extends React.Component {
-  state = {
-    input: ""
-  };
+function Content() {
 
-  render() {
-    return (
-        <div className="app1">
+  const [data,setData]=useState({})
 
-        <div className="content">
-           <img src={mostlycloudy} className="mainpic" alt="mostlycloudy"/>
-         </div>
-        <p className="description">overcast clouds</p>
+  const getWetherDetails=(cityName)=>{
 
-       
-        
 
-        <div className="temperature">
-          <container>
-            <h2>Temperature</h2>
-            <p>10&deg; to 11&deg;C</p>
-          </container>
-         </div>
-        
-         <div className="generalInfo">
-           <h3>Humidity</h3>
-           <p>78%</p>
-           <h3>Pressure</h3>
-           <p>1008.48</p>
-         </div>
+    const apikey = "e76027b9a5f5fe4859a5352ed5934bf3"
 
-       </div>
-    );
+    if (!cityName)return
+    const apiURL= "http://api.openweathermap.org/data/2.5/weather?q="+cityName +"&cnt=8&units=metric&appid="+apikey
+
+    axios.get(apiURL).then((res)=>{
+      console.log("resposne",res.data)
+      setData(res.data)
+    }).catch((err)=>{
+      console.log("err",err)
+    })
   }
-}
+
+useEffect(()=>{
+  getWetherDetails("Beirut");
+
+}, [])
+
+return (
+           <div className="app1">
+           <div className="content">
+              <img src={mostlycloudy} className="mainpic" alt="mostlycloudy"/>
+            </div>
+           <p className="description">overcast clouds</p>
+     
+      
+           <div className="temperature">
+             <div className="container1">
+               <h2>Temperature</h2>
+              <p> { data.main?.temp_max}</p>
+              <p> { data.main?.temp_min}</p>
+         
+             </div>
+            </div>
+      
+            <div className="generalInfo">
+              <h3>Humidity</h3>
+              <p>{data.main?.humidity}</p>
+              <h3>Pressure</h3>
+              <p>{data.main?.pressure}</p>
+            </div>
+          </div>
+       );
+     }
+   
 export default Content;
